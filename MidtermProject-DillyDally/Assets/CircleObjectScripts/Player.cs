@@ -10,9 +10,12 @@ public class Player : MonoBehaviour
 
     [SerializeField] RuntimeData _runtimeData;
 
+    Rigidbody2D _rigidBody;
+
     // Start is called before the first frame update
     void Start()
     {
+        _rigidBody = GetComponent<Rigidbody2D>();
 
         Scene currentScene = SceneManager.GetActiveScene();
         if (currentScene.name == "MainMenu") {
@@ -31,27 +34,18 @@ public class Player : MonoBehaviour
         if (currentScene.name == "MainMenu") {
             gameObject.SetActive(false);
         }
-
-        Movement(_speed);
         
         Vector3 newPosition = transform.position;
         _runtimeData.PlayerPosition = newPosition;
     }
 
-    void Movement(int speedTemp) {
-        if (Input.GetKey(KeyCode.UpArrow)) {
-            transform.position += Vector3.up * speedTemp * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.DownArrow)) {
-            transform.position += Vector3.down * speedTemp * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            transform.position += Vector3.left * speedTemp * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.RightArrow)) {
-            transform.position += Vector3.right * speedTemp * Time.deltaTime;
-        }
+    void FixedUpdate() {
+        Movement(_speed);
     }
 
+    void Movement(int speedTemp) {
+        Vector2 newVelocity = Input.GetAxis("Horizontal") * Vector2.right * speedTemp + Input.GetAxis("Vertical") * Vector2.up * speedTemp;
+        _rigidBody.velocity = newVelocity;
+    }
 
 }

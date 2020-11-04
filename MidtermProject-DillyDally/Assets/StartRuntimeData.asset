@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ae5cf331e226d42a16ba732c8313e8, type: 3}
   m_Name: StartRuntimeData
   m_EditorClassIdentifier: 
-  PlayerPosition: {x: -4.938594, y: -0.013859283, z: 0}
-  Score: 5
-  HighScore: 5
-  GameOverOccurrence: 
+  PlayerPosition: {x: -2.2612424, y: 1.4714345, z: 0}
+  Score: 2
+  HighScore: 9
+  GameOverOccurrence: WonByReachingGoal
+  StartTime: 23.387997
+  EndTime: 26.24

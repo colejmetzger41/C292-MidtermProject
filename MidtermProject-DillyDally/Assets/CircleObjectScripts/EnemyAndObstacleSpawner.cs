@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemyAndObstacleSpawner : MonoBehaviour
 {
 
     float _xMin;
@@ -12,6 +12,8 @@ public class EnemySpawner : MonoBehaviour
     float _yMax;
 
     [SerializeField] GameObject _enemyPrefab;
+
+    [SerializeField] GameObject _obstaclePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,10 @@ public class EnemySpawner : MonoBehaviour
         if (currentScene.name == "Gameplay") {
             InvokeRepeating("SpawnEnemy", 2f, 3f);
         }
+
+        if (currentScene.name == "Gameplay") {
+            InvokeRepeating("SpawnObstacle", 2f, 4f);
+        }
     }
 
     // Update is called once per frame
@@ -34,8 +40,16 @@ public class EnemySpawner : MonoBehaviour
     }
 
     void SpawnEnemy() {
+        Debug.Log("WORKPLEASE");
         float randX = Random.Range(_xMin, _xMax);
         float randY = Random.Range(_yMin, _yMax);
         Instantiate(_enemyPrefab, new Vector3(randX, randY, 0), Quaternion.identity);
+    }
+
+    void SpawnObstacle() {
+        float randX = Random.Range(_xMin, _xMax);
+        float randY = Random.Range(_yMin, _yMax);
+
+        Instantiate(_obstaclePrefab, new Vector3(randX, randY, 0), Quaternion.identity);
     }
 }

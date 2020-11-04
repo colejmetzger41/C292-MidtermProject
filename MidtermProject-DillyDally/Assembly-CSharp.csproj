@@ -37,10 +37,12 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\CircleObjectScripts\Enemy.cs" />
-     <Compile Include="Assets\CircleObjectScripts\EnemySpawner.cs" />
+     <Compile Include="Assets\CircleObjectScripts\EnemyAndObstacleSpawner.cs" />
      <Compile Include="Assets\CircleObjectScripts\Goal.cs" />
      <Compile Include="Assets\CircleObjectScripts\GoalSpawner.cs" />
+     <Compile Include="Assets\CircleObjectScripts\Obstacle.cs" />
      <Compile Include="Assets\CircleObjectScripts\Player.cs" />
+     <Compile Include="Assets\GameReset.cs" />
      <Compile Include="Assets\RuntimeData.cs" />
      <Compile Include="Assets\SceneSwitcher.cs" />
      <Compile Include="Assets\ScoreKeeper.cs" />

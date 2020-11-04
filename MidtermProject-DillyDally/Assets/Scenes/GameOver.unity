@@ -474,7 +474,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 278187893}
-        m_MethodName: GotoMainMenuScene
+        m_MethodName: GotoGameScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -913,6 +913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2049613405}
   - component: {fileID: 2049613404}
+  - component: {fileID: 2049613403}
   m_Layer: 0
   m_Name: Background (2)
   m_TagString: Untagged
@@ -920,6 +921,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2049613403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049613402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45bc912dd875824ebb6555bb2779a9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _runtimeData: {fileID: 11400000, guid: a2ed555460f28014fb8d756c5f059ee6, type: 2}
 --- !u!212 &2049613404
 SpriteRenderer:
   m_ObjectHideFlags: 0
